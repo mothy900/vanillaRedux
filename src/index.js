@@ -1,21 +1,14 @@
-const add = document.getElementById("add");
-const minus = document.getElementById("minus");
-const number = document.querySelector("span");
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import App from "./components/App";
+import store from "./Store";
 
-let count = 0;
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
 
-number.innerText = count;
-
-const updateText = () => {
-  number.innerText = count;
-};
-const handleAdd = () => {
-  count++;
-  updateText();
-};
-const handleMinus = () => {
-  count--;
-  updateText();
-};
-add.addEventListener("click", handleAdd);
-minus.addEventListener("click", handleMinus);
+// If you want to s
